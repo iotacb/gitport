@@ -150,7 +150,9 @@ async function checkForToken() {
 			token = askedToken;
 			fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 		} else {
-			throw new Error("Please enter a valid token!");
+			throw new Error(
+				"Please enter a valid token! (Token entered? Try resetting with --reset)"
+			);
 		}
 	} else {
 		const data = fs.readFileSync(envFilePath, "utf8");
@@ -161,7 +163,9 @@ async function checkForToken() {
 				token = askedToken;
 				fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 			} else {
-				throw new Error("Please enter a valid token!");
+				throw new Error(
+					"Please enter a valid token! (Token entered? Try resetting with --reset)"
+				);
 			}
 		} else {
 			token = data.split("=")[1].trim();
