@@ -147,8 +147,8 @@ async function checkForToken() {
 		console.log(chalk.yellow("No token found!"));
 		const askedToken = await askForToken();
 		if (askedToken) {
-			fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 			token = askedToken;
+			fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 		} else {
 			throw new Error("Please enter a valid token!");
 		}
@@ -158,8 +158,8 @@ async function checkForToken() {
 			console.log(chalk.yellow("No token found!"));
 			const askedToken = await askForToken();
 			if (askedToken) {
-				fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 				token = askedToken;
+				fs.writeFileSync(envFilePath, `GITHUB_TOKEN=${token}`);
 			} else {
 				throw new Error("Please enter a valid token!");
 			}
