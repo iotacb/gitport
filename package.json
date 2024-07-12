@@ -1,0 +1,26 @@
+{
+	"name": "gitport",
+	"version": "1.0.0",
+	"description": "Small CLI to import files from github to your local machine without creating a clone of the repo",
+	"main": "index.js",
+	"bin": "./index.js",
+	"type": "module",
+	"author": "Christopher Brandt",
+	"license": "MIT",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"files": [
+		"index.js",
+		"package.json"
+	],
+	"dependencies": {
+		"@octokit/core": "^6.1.2",
+		"chalk": "^5.2.0",
+		"command-line-args": "^5.2.1",
+		"command-line-usage": "^7.0.2",
+		"figlet": "^1.7.0",
+		"inquirer": "^10.0.1",
+		"nanospinner": "^1.1.0"
+	}
+}
