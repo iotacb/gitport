@@ -1,7 +1,20 @@
 {
 	"name": "gitport",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Small CLI to import files from github to your local machine without creating a clone of the repo",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/iotacb/gitport"
+	},
+	"keywords": [
+		"git",
+		"github",
+		"import",
+		"cli",
+		"cloning",
+		"clone",
+		"copy"
+	],
 	"main": "index.js",
 	"bin": "./index.js",
 	"type": "module",
