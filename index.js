@@ -9,7 +9,6 @@ import { createSpinner } from "nanospinner";
 import chalk from "chalk";
 import getUsage from "command-line-usage";
 import commandLineArgs from "command-line-args";
-import figlet from "figlet";
 
 let octokit;
 let gitPath = "";
@@ -29,7 +28,11 @@ const usageSections = [
 	},
 	{
 		header: "GitPort",
-		content: ["> gitport {bold --help}", "> gitport {bold --reset}"],
+		content: [
+			"> gitport {bold --help}",
+			"> gitport {bold --reset}",
+			"> gitport {bold --version}",
+		],
 	},
 ];
 
@@ -40,12 +43,19 @@ const availableArgs = [
 		type: Boolean,
 	},
 	{
+		name: "version",
+		alias: "v",
+		type: Boolean,
+	},
+	{
 		name: "reset",
 		alias: "r",
 		type: Boolean,
 	},
 ];
 const options = commandLineArgs(availableArgs);
+
+const packageJson = JSON.parse(fs.readFileSync("./package.json"));
 
 async function askOptions() {
 	const answers = await inquirer.prompt([
@@ -209,6 +219,12 @@ if (options.help) {
 	console.log(getUsage(usageSections));
 } else if (options.reset) {
 	resetToken();
+} else if (options.version) {
+	console.log(
+		`You are currently using ${chalk.cyan.bold(
+			packageJson.name
+		)}@${chalk.green.bold(packageJson.version)}`
+	);
 } else {
 	await checkForToken();
 	await askOptions();

@@ -1,6 +1,6 @@
 {
 	"name": "gitport",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"description": "Small CLI to import files from github to your local machine without creating a clone of the repo",
 	"repository": {
 		"type": "git",
